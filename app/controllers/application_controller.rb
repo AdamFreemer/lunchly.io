@@ -9,4 +9,13 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+	def get_coordinates
+		@coordinates = {}
+		lat = request.location.latitude
+		lon = request.location.longitude
+		@coordinates[:lat] = lat
+		@coordinates[:lon] = lon
+	end
+
+
 end
