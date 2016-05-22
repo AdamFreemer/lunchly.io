@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: cfd5ee5050c0524cd75f9609089f469667d1f79c
+  specs:
+    bootstrap-generators (3.3.4)
+      railties (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -144,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-generators!
   byebug
   coffee-rails (~> 4.1.0)
   geocoder
