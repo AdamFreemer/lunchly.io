@@ -8,14 +8,14 @@
 
 <p>
   <strong>Address:</strong>
-  <%= best_in_place  @location, :address %>
+  <%= best_in_place @location, :address %>
 </p>
 
 <iframe
   width="550"
   height="400"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&zoom=11&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&q=<%= @location.name %>&zoom=11&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
 </iframe>
 
 <h3>Nearby Locations</h3>
