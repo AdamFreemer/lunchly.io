@@ -2,38 +2,29 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @location.name %>
+  <%= best_in_place @location, :name %>
 </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
 
 <p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
+  <strong>Address:</strong>
+  <%= best_in_place  @location, :address %>
 </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @location.city %>
-</p>
+<iframe
+  width="550"
+  height="400"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&zoom=11&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
+</iframe>
 
-<p>
-  <strong>State:</strong>
-  <%= @location.state %>
-</p>
+<h3>Nearby Locations</h3>
+<ul>
+<% for location in @location.nearbys(10) %>
+  <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
 
-<p>
-  <strong>Country:</strong>
-  <%= @location.country %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @location.zip_code %>
-</p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

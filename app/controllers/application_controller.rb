@@ -11,8 +11,14 @@ class ApplicationController < ActionController::Base
 
 	def get_coordinates
 		@coordinates = {}
-		lat = request.location.latitude
-		lon = request.location.longitude
+		if request.location.blank?
+			loc = Geocoder.search("50.78.167.161").first
+			lat = loc.latitude
+			lon = location.longitude
+		else
+			lat = request.location.latitude
+			lon = request.location.longitude
+		end	
 		@coordinates[:lat] = lat
 		@coordinates[:lon] = lon
 	end

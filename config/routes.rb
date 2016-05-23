@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :locations
   resources :users
   get 'landing/index'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landing#index'
+  root 'locations#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
