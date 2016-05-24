@@ -11,18 +11,18 @@
 <h2>Locations</h2>
 
 
-<table class="table table-striped">
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Name</th>
       <th>Address</th>
       <th>Category</th>
       <th>Coordinates</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody data-link="row" class="rowlink">
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.name %></td>
