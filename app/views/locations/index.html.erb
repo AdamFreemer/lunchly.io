@@ -1,12 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Locations</h1>
+
+<iframe
+  width="100%"
+  height="500"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&zoom=13&q=diner&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
+</iframe>
+
+<h2>Locations</h2>
+
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Address</th>
+      <th>Category</th>
       <th>Coordinates</th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +27,7 @@
       <tr>
         <td><%= location.name %></td>
         <td><%= location.address %></td>
+        <td><%= location.category %></td>
         <td><%= location.latitude %> latitude, <%= location.longitude %> longitude</td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>

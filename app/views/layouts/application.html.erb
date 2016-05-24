@@ -35,14 +35,16 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to 'Home', root_path %></li>
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Show Categories <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="active"><%= link_to 'Edit', categories_path %></li>
+            <li><%= link_to 'All', locations_path %></li>
             <li role="separator" class="divider"></li>
             <% categories = Category.all %>
             <% categories.each do |c| %>
-              <li><%= link_to c.name, root_path %></li>
+              <li><%= link_to c.name, locations_path(category: c.name) %></li>
             <% end %>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'Edit', categories_path %></li>
           </ul>
         </li>
         </ul>

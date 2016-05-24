@@ -9,6 +9,19 @@
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+
+  <%= collection_select(:location, :category_id, Category.all, :id, :name) %>
+
+
+
+  <br><br>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -2,7 +2,12 @@ class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @locations = Location.all
+    @current_location = get_coordinates
+    if params[:category].nil?
+      @locations = Location.all
+    else
+      @locations = Location.where(category: params[:category])  
+    end  
   end
 
   def show
@@ -55,6 +60,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:name, :latitude, :longitude, :city, :state, :country, :zip_code, :address)
+      params.require(:location).permit(:name, :latitude, :longitude, :city, :state, :country, :zip_code, :address, :category)
     end
 end
