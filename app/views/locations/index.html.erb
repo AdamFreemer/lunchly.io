@@ -1,12 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-
-<iframe
-  width="100%"
-  height="500"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&zoom=13&q=diner&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
-</iframe>
+<!-- This is completely not dry, but for now -->
+<% if Rails.env.development? %>
+  <iframe
+    width="100%"
+    height="500"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= CONFIG_API["google_maps"] %>&zoom=13&q=diner&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
+  </iframe>
+<% else %>
+  <iframe
+    width="100%"
+    height="500"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= GOOGLE_MAPS_API_KEY %>&zoom=13&q=diner&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
+  </iframe>
+<% end %>
 
 <h2>Locations</h2>
 
