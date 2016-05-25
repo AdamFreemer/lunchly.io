@@ -13,4 +13,4 @@
 /tmp
 
 # Ignore secret stuff
-/config/api_key.yml
+api_key.yml
