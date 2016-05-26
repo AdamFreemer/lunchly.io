@@ -15,12 +15,7 @@
     <%= f.text_field :category %>
   </div>
 
-  <%= collection_select(:location, :category_id, Category.all, :id, :name) %>
-
-
-
   <br><br>
-
 
   <div class="actions">
     <%= f.submit %>

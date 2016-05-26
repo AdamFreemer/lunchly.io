@@ -18,13 +18,23 @@
 <i>Click on above data for in-place editing</i>
 <br>
 
-<iframe
-  style="margin-top:10px"
-  width="100%"
-  height="400"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB4coigno47Xpx4bPB4Z_RgVFHdT8OhBQY&q=<%= @location.name %>&zoom=13&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
-</iframe>
+<% if Rails.env.development? %>
+  <iframe
+    style="margin-top:10px"
+    width="100%"
+    height="400"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= CONFIG_API["google_maps"] %>&q=<%= @location.name %>&zoom=13&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
+  </iframe>
+  <% else %>
+  <iframe
+    style="margin-top:10px"
+    width="100%"
+    height="400"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= GOOGLE_MAPS_API_KEY %>&q=<%= @location.name %>&zoom=13&q=diner&center=<%= @location.latitude %>,<%= @location.longitude %>">
+  </iframe>
+<% end %>
 
 <h3>Nearby Locations</h3>
 <ul>
