@@ -82,4 +82,7 @@ production:
   <<: *default
   database: demo_app1_production
   username: demo_app1
-  password: <%= ENV['DEMO_APP1_DATABASE_PASSWORD'] %>
+  password: admin
+
+
+  ## restart postgres sudo /etc/rc.d/init.d/postgresql restart
