@@ -6,6 +6,8 @@ gem 'geocoder'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 
 ## system gems
+gem 'puma'
+
 gem 'rails', '4.2.6'
 
 gem 'pg', '~> 0.15'
