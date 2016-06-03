@@ -1,5 +1,5 @@
 # Change these
-server 'server', port: 22, roles: [:web, :app, :db], primary: true
+server '54.200.60.104', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/AdamFreemer/demo_app1.git'
 set :application,     'address_book_app'
