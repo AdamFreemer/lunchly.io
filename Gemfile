@@ -27,6 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  ## cap related
+	gem 'capistrano',         require: false
+	gem 'capistrano-rvm',     require: false
+	gem 'capistrano-rails',   require: false
+	gem 'capistrano-bundler', require: false
+	gem 'capistrano3-puma',   require: false
 end
 
 group :development do
