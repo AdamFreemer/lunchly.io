@@ -2,7 +2,7 @@
 server 'server', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/AdamFreemer/demo_app1.git'
-set :application,     'address book'
+set :application,     'address_book_app'
 set :user,            'ec2-user'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
