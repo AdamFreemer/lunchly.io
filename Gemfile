@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 ## app specific
 gem 'best_in_place' # TODO: remove in-place, buggy
 gem 'geocoder'
@@ -7,6 +9,8 @@ gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-gener
 
 ## system gems
 gem 'puma'
+
+gem 'rails_12factor', group: :production
 
 gem 'rails', '4.2.6'
 
@@ -30,15 +34,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
   ## cap related
-	gem 'capistrano',         require: false
-	gem 'capistrano-rvm',     require: false
-	gem 'capistrano-rails',   require: false
-	gem 'capistrano-bundler', require: false
-	gem 'capistrano3-puma',   require: false
+	# gem 'capistrano',         require: false
+	# gem 'capistrano-rvm',     require: false
+	# gem 'capistrano-rails',   require: false
+	# gem 'capistrano-bundler', require: false
+	# gem 'capistrano3-puma',   require: false
 end
 
 group :development do
-
   # gem 'web-console', '~> 2.0'
   gem 'spring'
 end
