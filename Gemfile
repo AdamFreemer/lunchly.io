@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.3.0'
 
 ## app specific
 gem 'best_in_place' # TODO: remove in-place, buggy
@@ -9,8 +9,6 @@ gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-gener
 
 ## system gems
 gem 'puma'
-
-gem 'rails_12factor', group: :production
 
 gem 'rails', '4.2.6'
 
@@ -29,7 +27,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 
 group :development, :test do
   gem 'byebug'
