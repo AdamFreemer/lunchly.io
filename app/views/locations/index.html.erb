@@ -1,11 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<iframe
-  width="100%"
-  height="500"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=<%= CONFIG_API["google_maps"] %>&zoom=13&q=sushi&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
-</iframe>
+<% if Rails.env.development? %>
+  <iframe
+    width="100%"
+    height="500"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= CONFIG_API["google_maps"] %>&zoom=13&q=sushi&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
+  </iframe>
+<% else %>
+  <iframe
+    width="100%"
+    height="500"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=<%= ENV["GOOGLE_API_KEY"] %>&zoom=13&q=sushi&center=<%= @current_location[:lat] %>,<%= @current_location[:lon] %>">
+  </iframe>
+<% end %>
 
 <h2>Locations</h2>
 
