@@ -24,7 +24,6 @@
       <th>Name</th>
       <th>Address</th>
       <th>Category</th>
-      <th>Coordinates</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -35,7 +34,6 @@
         <td><%= location.name %></td>
         <td><%= location.address %></td>
         <td><%= location.category %></td>
-        <td><%= location.latitude %> latitude, <%= location.longitude %> longitude</td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete %></td>
