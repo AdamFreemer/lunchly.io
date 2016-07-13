@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <% if Rails.env.development? %>
   <iframe
@@ -24,7 +24,9 @@
       <th>Name</th>
       <th>Address</th>
       <th>Category</th>
-      <th colspan="3"></th>
+      <% unless current_user && current_user.email == 'admin@freemer.com' %>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -34,16 +36,18 @@
         <td><%= location.name %></td>
         <td><%= location.address %></td>
         <td><%= location.category %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete %></td>
+        <td><span class="glyphicon glyphicon-circle-arrow-right"><%= link_to '', location %></span></td>
+        <% if current_user && current_user.email == 'admin@freemer.com' %>
+          <td><%= link_to 'Edit', edit_location_path(location) %></td>
+          <td><%= link_to 'Delete', location, method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Location', new_location_path %>
-
+<% if current_user && current_user.email == 'admin@freemer.com' %>
+  <%= link_to 'New Location', new_location_path %>
+<% end %>
 <br><br>

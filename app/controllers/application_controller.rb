@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-	http_basic_authenticate_with name: "fizz", password: "buzz"
-
 	def get_remote_ip
 		if request.remote_ip == '127.0.0.1' || request.remote_ip == '::1' ## for dev testing both IPv4 & IPv6
 		  @my_ip = '68.45.67.89'
@@ -20,7 +18,7 @@ class ApplicationController < ActionController::Base
 		else
 			lat = request.location.latitude
 			lon = request.location.longitude
-		end	
+		end
 		coordinates[:lat] = lat
 		coordinates[:lon] = lon
 		return coordinates

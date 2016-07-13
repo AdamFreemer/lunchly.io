@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, :authenticate_user!, only: [:show, :edit, :update, :destroy]
 
   def index
     @current_location = get_coordinates
@@ -54,6 +54,12 @@ class LocationsController < ApplicationController
     end
   end
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email) }
+  end
+
+
+
   private
     def set_location
       @location = Location.find(params[:id])
@@ -62,4 +68,8 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:name, :latitude, :longitude, :city, :state, :country, :zip_code, :address, :category)
     end
+
+
+
+
 end

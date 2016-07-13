@@ -14,8 +14,9 @@
   <strong>Category:</strong>
   <%= best_in_place @location, :category %>
 </p>
-
-<i>Click on above data for in-place editing</i>
+<% if current_user && current_user.email == 'admin@freemer.com' %>
+  <i>Click on above data for in-place editing</i>
+<% end %>  
 <br>
 
 <% if Rails.env.development? %>
@@ -43,6 +44,7 @@
 <% end %>
 </ul>
 
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<% if current_user && current_user.email == 'admin@freemer.com' %>
+  <%= link_to 'Edit', edit_location_path(@location) %> |
+  <%= link_to 'Back', locations_path %>
+<% end %>

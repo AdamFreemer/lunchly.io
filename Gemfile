@@ -5,6 +5,10 @@ ruby '2.3.0'
 ## app specific
 gem 'best_in_place' # TODO: remove in-place, buggy
 gem 'geocoder'
+
+gem 'devise'
+gem 'devise-bootstrap-views'
+
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
 
 ## system gems
