@@ -18,7 +18,7 @@
 
 <h2>Locations</h2>
 
-<table class="table table-striped table-hover ">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -37,7 +37,7 @@
         <td><%= location.address %></td>
         <td><%= location.category %></td>
         <td><span class="glyphicon glyphicon-circle-arrow-right"><%= link_to '', location %></span></td>
-        <% if current_user && current_user.email == 'admin@freemer.com' %>
+        <% if current_user && current_user.can_edit %>
           <td><%= link_to 'Edit', edit_location_path(location) %></td>
           <td><%= link_to 'Delete', location, method: :delete %></td>
         <% end %>
