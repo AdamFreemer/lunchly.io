@@ -24,7 +24,7 @@
       <th>Name</th>
       <th>Address</th>
       <th>Category</th>
-      <% unless current_user && current_user.email == 'admin@freemer.com' %>
+      <% unless current_user && current_user.can_edit %>
         <th colspan="3"></th>
       <% end %>
     </tr>
@@ -47,7 +47,7 @@
 </table>
 
 <br>
-<% if current_user && current_user.email == 'admin@freemer.com' %>
+<% if current_user && current_user.can_edit %>
   <%= link_to 'New Location', new_location_path %>
 <% end %>
 <br><br>

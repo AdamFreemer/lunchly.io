@@ -14,7 +14,7 @@
   <strong>Category:</strong>
   <%= best_in_place @location, :category %>
 </p>
-<% if current_user && current_user.email == 'admin@freemer.com' %>
+<% if current_user && current_user.can_edit %>
   <i>Click on above data for in-place editing</i>
 <% end %>  
 <br>
@@ -44,7 +44,7 @@
 <% end %>
 </ul>
 
-<% if current_user && current_user.email == 'admin@freemer.com' %>
+<% if current_user && current_user.can_edit %>
   <%= link_to 'Edit', edit_location_path(@location) %> |
   <%= link_to 'Back', locations_path %>
 <% end %>
