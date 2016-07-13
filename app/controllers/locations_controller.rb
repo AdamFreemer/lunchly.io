@@ -58,8 +58,6 @@ class LocationsController < ApplicationController
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email) }
   end
 
-
-
   private
     def set_location
       @location = Location.find(params[:id])
@@ -68,8 +66,4 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:name, :latitude, :longitude, :city, :state, :country, :zip_code, :address, :category)
     end
-
-
-
-
 end

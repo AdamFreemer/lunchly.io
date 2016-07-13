@@ -23,6 +23,4 @@ class ApplicationController < ActionController::Base
 		coordinates[:lon] = lon
 		return coordinates
 	end
-
-
 end
