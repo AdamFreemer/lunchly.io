@@ -4,10 +4,10 @@ class LocationsController < ApplicationController
   def index
     @current_location = get_coordinates
     if params[:category].nil?
-      @locations = Location.all
+      @locations = Location.all.sort_by &:name
     else
-      @locations = Location.where(category: params[:category])  
-    end  
+      @locations = Location.where(category: params[:category]).sort_by &:name
+    end
   end
 
   def show
