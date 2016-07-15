@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713020539) do
+ActiveRecord::Schema.define(version: 20160714013801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,24 @@ ActiveRecord::Schema.define(version: 20160713020539) do
     t.integer  "category_id"
     t.string   "category"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.string   "summary"
+    t.integer  "time_to_seated"
+    t.integer  "time_to_food"
+    t.integer  "service_rating"
+    t.integer  "noise_level"
+    t.boolean  "wifi"
+    t.boolean  "outdoor_seating"
+    t.boolean  "would_return"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["location_id"], name: "index_reviews_on_location_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
