@@ -27,3 +27,7 @@ body { background: #fdfdfd !important; }
 .custom_nav .navbar.navbar-fixed-top .navbar-inner{
     background: rgba(255, 255, 255, 1.0);
 }
+
+.btn {
+  border-radius: 1px;
+}
