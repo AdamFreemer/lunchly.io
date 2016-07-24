@@ -14,3 +14,16 @@
  *= require_self
  *= require devise_bootstrap_views
  */
+
+/*navbar customization*/
+ .nav-custom {
+   border-bottom-color: #bbb;
+   background-color: #fff;
+ }
+
+/*page background color override*/
+body { background: #fdfdfd !important; }
+
+.custom_nav .navbar.navbar-fixed-top .navbar-inner{
+    background: rgba(255, 255, 255, 1.0);
+}
