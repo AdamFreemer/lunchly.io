@@ -19,15 +19,36 @@
  .nav-custom {
    border-bottom-color: #bbb;
    background-color: #fff;
+   box-shadow: 0 1px 4px 0 #aaa;
  }
 
 /*page background color override*/
-body { background: #fdfdfd !important; }
+body { background: #fffffe !important; }
 
-.custom_nav .navbar.navbar-fixed-top .navbar-inner{
-    background: rgba(255, 255, 255, 1.0);
-}
+/*.custom_nav .navbar.navbar-fixed-top .navbar-inner{*/
+    /*background: rgba(255, 255, 255, 1.0);*/
+/*}*/
 
 .btn {
   border-radius: 1px;
+}
+.navbar-logo {
+    padding-left: 5px;
+}
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #eee;
+    color: #000;
+}
+
+.navbar-brand:focus {
+    color: blue;
+    background-color: #eee;
 }
