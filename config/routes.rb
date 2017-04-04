@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  resources :locations do
+    resources :reviews
+  end
+
   resources :categories
-  resources :locations
+
   resources :users
+
   get 'landing/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

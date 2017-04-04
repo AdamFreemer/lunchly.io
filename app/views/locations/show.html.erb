@@ -83,17 +83,28 @@
   <h4>Reviews</h4>
 
   <table class="table table-striped table-hover">
-  <tbody data-link="row" class="rowlink">
-    <tr>
-      <td>"Fast service, great food, one of my favorites!"</td>
-    </tr>
-    <tr>
-      <td>"Fast service, great food, one of my favorites!"</td>
-    </tr>
-    <tr>
-      <td>"Fast service, great food, one of my favorites!"</td>
-    </tr>
-  </tbody>
-</table>
+    <tbody data-link="row" class="rowlink">
+      <tr>
+        <td>"Fast service, great food, one of my favorites!"</td>
+      </tr>
+      <tr>
+        <td>"Fast service, great food, one of my favorites!"</td>
+      </tr>
+      <tr>
+        <td>"Fast service, great food, one of my favorites!"</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>Add a review:</h2>
+  <%= form_for([@location, @location.reviews.build]) do |f| %>
+    <p>
+      <%= f.label :summary %><br>
+      <%= f.text_field :summary %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
 
 </div>
