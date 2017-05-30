@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	def get_coordinates
 		coordinates = {}
 		if request.location.latitude == 0 && request.location.longitude == 0
-			loc = Geocoder.search("50.78.167.161").first
+			loc = Geocoder.search("San Francisco, CA").first
 			lat = loc.latitude
 			lon = loc.longitude
 		else
