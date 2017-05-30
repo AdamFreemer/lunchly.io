@@ -14,5 +14,5 @@
 
 # Ignore secret stuff
 # /config/api_key.yml
-# /config/keys.yml
+config/keys.yml
 .idea/*
