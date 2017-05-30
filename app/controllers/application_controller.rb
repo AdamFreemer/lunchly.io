@@ -16,11 +16,14 @@ class ApplicationController < ActionController::Base
 			lat = loc.latitude
 			lon = loc.longitude
 		else
-			lat = request.location.latitude
-			lon = request.location.longitude
+			loc = Geocoder.search("San Francisco, CA").first
+			lat = loc.latitude
+			lon = loc.longitude
+			# lat = request.location.latitude
+			# lon = request.location.longitude
 		end
 		coordinates[:lat] = lat
 		coordinates[:lon] = lon
-		return coordinates
+		coordinates
 	end
 end
