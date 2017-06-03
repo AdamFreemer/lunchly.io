@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
 
 	def get_remote_ip
@@ -11,17 +12,14 @@ class ApplicationController < ActionController::Base
 
 	def get_coordinates
 		coordinates = {}
-		if request.location.latitude == 0 && request.location.longitude == 0
-			loc = Geocoder.search("San Francisco, CA").first
-			lat = loc.latitude
-			lon = loc.longitude
-		else
-			loc = Geocoder.search("San Francisco, CA").first
-			lat = loc.latitude
-			lon = loc.longitude
+		# if request.location.latitude == 0 && request.location.longitude == 0
+			loc = geocode_by_ip(request.remote_ip)
+			lat = loc['lat']
+			lon = loc['lon']
+		# else
 			# lat = request.location.latitude
 			# lon = request.location.longitude
-		end
+		# end
 		coordinates[:lat] = lat
 		coordinates[:lon] = lon
 		coordinates
