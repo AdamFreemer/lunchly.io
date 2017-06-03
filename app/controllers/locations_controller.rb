@@ -4,8 +4,6 @@ class LocationsController < ApplicationController
   before_action :set_location, :authenticate_user!, only: [:show, :edit, :update, :destroy]
 
   def index
-
-    # include Geo
     @current_location = location(request.remote_ip)
     if params[:category].nil?
       @locations = Location.all.sort_by &:name
